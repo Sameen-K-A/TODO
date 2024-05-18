@@ -1,0 +1,41 @@
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 10px 0;
+    color: #F8F4E1;
+    background-color: #3c250c;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+    border-radius: 20px;
+}
+
+.content_div{
+    width: 400px;
+}
+
+.left-side {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right-side {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-btn,
+.edit-btn {
+    border: none;
+    background-color: transparent;
+}
