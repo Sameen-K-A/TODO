@@ -12,3 +12,7 @@ body {
 .heading_div h1 {
     color: #3c250c;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+}

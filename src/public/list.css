@@ -19,7 +19,7 @@
     border-radius: 20px;
 }
 
-.content_div{
+.content_div {
     width: 400px;
 }
 
@@ -38,4 +38,35 @@
 .edit-btn {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+}
+
+.editContent {
+    background-color: transparent;
+    border: none;
+    color: #F8F4E1;
+}
+
+.deleteall-btn {
+    background-color: #3c250c;
+    color: #F8F4E1;
+    border: 1px solid #3c250c;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 50px;
+    align-self: flex-end;
+}
+
+.deleteall-btn:hover {
+    background-color: #F8F4E1;
+    border: 1px solid #3c250c;
+    color: #3c250c;
+}
+
+.deleteall_btn_div{
+    display: flex;
+    justify-content: end;
+    align-items: end;
 }
