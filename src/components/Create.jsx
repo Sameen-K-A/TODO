@@ -7,6 +7,12 @@ const Create = (props) => {
 
   function createNewOne() {
     if (newInput.trim().length != 0) {
+      for(let i=0 ; i<todoArray.length ; i++){
+        if(todoArray[i].content.toLowerCase() == newInput.toLowerCase()){
+          toast("Already entered" , "Red");
+          return false
+        }
+      }
       const obj = {
         content: newInput,
         id: Date(),
