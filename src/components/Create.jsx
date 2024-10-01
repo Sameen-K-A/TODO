@@ -1,15 +1,14 @@
 import "../public/create.css";
 import { useState } from "react";
 
-const Create = (props) => {
+const Create = ({ todoArray, setTodoArray , toast}) => {
   const [newInput, setNewInput] = useState("");
-  const { todoArray, setTodoArray , toast} = props;
 
   function createNewOne() {
     if (newInput.trim().length != 0) {
       for(let i=0 ; i<todoArray.length ; i++){
         if(todoArray[i].content.toLowerCase() == newInput.toLowerCase()){
-          toast("Already entered" , "Red");
+          toast("Already entered");
           return false
         }
       }
@@ -19,12 +18,13 @@ const Create = (props) => {
         complete: false,
       };
       setTodoArray([obj, ...todoArray]);
-      toast("Created" , "green");
+      toast("Created");
       setNewInput("");
     } else {
-      toast("Enter todo content" , "red")
+      toast("Enter todo content")
     }
   }
+
 
   const enterBtn = (event)=>{
     if(event.key === "Enter"){

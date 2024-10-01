@@ -1,30 +1,30 @@
-import './public/app.css'
+import './public/app.css';
 import Heading from './components/Heading';
 import Create from './components/Create';
 import Center from './components/Center';
-import Toastify from "toastify-js";
-import "toastify-js/src/toastify.css";
-import {useState} from 'react';
+import { toast, Toaster } from "sonner";
+import { useState, useEffect } from 'react';
 
 function App() {
   const [todoArray, setTodoArray] = useState([]);
 
-  const toast = (content , color) => {
-    Toastify({
-      text: content,
-      duration: 1500,
-      close: false,
-      gravity: "top",
-      position: "right",
-      backgroundColor: color,
-    }).showToast();
-  };
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      setTodoArray(JSON.parse(storedTodos));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todoArray));
+  }, [todoArray]);
 
   return (
     <>
-    <Heading/>
-    <Create setTodoArray={setTodoArray} todoArray={todoArray} toast={toast} />
-    <Center todoArray={todoArray} setTodoArray={setTodoArray} toast={toast}/>
+      <Toaster position="bottom-right" closeButton="true" />
+      <Heading />
+      <Create setTodoArray={setTodoArray} todoArray={todoArray} toast={toast} />
+      <Center todoArray={todoArray} setTodoArray={setTodoArray} toast={toast} />
     </>
   );
 }
